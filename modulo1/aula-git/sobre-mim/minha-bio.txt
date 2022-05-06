@@ -1,0 +1,11 @@
+Nome: Daniel Luiz Pereira
+Idade: 34
+Formado em Administração
+Estudante de Analise de Sistemas pela faculdade Anhembi Morumbi
+Estudante de Desenvolvimento Full Stack pela Labenu
+Hobbys: Jogar video game, fazer exercicios, viajar, curtir Pets
+Antes de começar a estudar tecnologia eu era técnico em informática
+Morei os últimos 4 anos na Alemanha.
+Aprendi a falar Alemão e inglês morando lá.
+Me interesso por desenvolvimento web, mobile, back e front end.
+Não me interesso muito por banco de dados e data science.
