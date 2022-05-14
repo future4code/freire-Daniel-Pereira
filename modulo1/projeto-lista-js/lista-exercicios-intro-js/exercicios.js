@@ -133,11 +133,20 @@ function checaRenovacaoRG() {
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
-
+    const condicao1 = ano % 400 == 0
+    const condicao2 = ano % 4 == 0
+    const condicao3 = ano % 100 !==0
+    
+    return(condicao1 || condicao2 && condicao3)
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+  const idade = prompt("responda com sim ou nao")
+  const ensino = prompt("responda com sim ou nao")
+  const dispo = prompt("responda com sim ou nao")
 
+  const permitido = idade == "sim" && ensino == "sim" && dispo == "sim"
+  console.log(permitido)
 }
