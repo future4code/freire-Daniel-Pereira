@@ -51,17 +51,13 @@ let array = []
 
 if(quantidade == 0) {
     console.log("Que pena! Você pode adotar um pet!")
-}
-
-if(quantidade > 0) {
+} else {
     let i = 0
-    
     while (i < quantidade) {
         array[i] = prompt("Digite o nome do animal")
         i++
     }   
-}
-
+} 
 console.log(array)
 
 //2. Considere que você tenha acesso a um `array`  (chamado de 'array original') que é composto somente de números. Baseando-se nisso, crie uma função para cada um dos itens abaixo, realizando as operações pedidas:
