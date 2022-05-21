@@ -1,76 +1,131 @@
 function Blackjack() {
 
-
-   if(confirm("Quer iniciar uma rodada?")) {
-
+   if (confirm("Quer iniciar uma rodada?")) {
 
       console.log("Boas vindas ao jogo de Blackjack")
 
-      // comprar primeira carta
+      let jogador1 = []
+      let pontosJogador1 = 0
 
-         const danielCarta1 = comprarCarta();
-         let daniel = danielCarta1.valor
-         console.log(`Daniel comprou a carta ${danielCarta1.texto} e está com ${daniel} pontos`)
+      let jogador2 = []
+      let pontosJogador2 = 0
 
-         const pilarCarta1 = comprarCarta();
-         let pilar = pilarCarta1.valor
-         console.log(`Pilar comprou a carta ${pilarCarta1.texto} e está com ${pilar} pontos`)
+      // >>>>>>>>>>>>>>>>>>> comprar as duas primeiras cartas <<<<<<<<<<<<<<<<<<<<<<<
+
+      let cartaInicialOk = false
+
+      while (!cartaInicialOk) {
+         jogador1.push(comprarCarta())
+         jogador1.push(comprarCarta())
+         jogador2.push(comprarCarta())
+         jogador2.push(comprarCarta())
+
+         if ((jogador1[0] === 11 && jogador1[1] === 11) || (jogador2[0] === 11 && jogador2[1] === 11)) {
+            jogador1 = []
+            jogador2 = []
+         } else {
+            cartaInicialOk = true
+         }
+      }
+
+      for (var i = 0; i < jogador1.length; i++) {
+         pontosJogador1 += jogador1[i].valor;
+      }
+
+      for (var i = 0; i < jogador2.length; i++) {
+         pontosJogador2 += jogador2[i].valor;
+      }
+
+      console.log(`Jogador1 comprou as cartas ${jogador1[0].texto} e ${jogador1[1].texto} e está com ${pontosJogador1} pontos`)
+      console.log(`Jogador2 comprou as carta ${jogador2[0].texto} e  ${jogador2[1].texto} e está com ${pontosJogador2} pontos`)
 
 
-      // comprar segunda carta
+      // >>>>>>>>>>>>>>>>>>> comprar a próxima carta <<<<<<<<<<<<<<<<<<<<<<<
 
 
-         if (confirm("Daniel quer comprar a segunda carta?")) {
+      if (pontosJogador1 == 21 && pontosJogador2 == 21) {
+         console.log("Empatou")
+      } else if (pontosJogador1 == 21) {
+         console.log("Jogador 1 fez Blackjack")
+      } else if (pontosJogador2 == 21) {
+         console.log("Jogador 2 fez Blackjack")
+      } else {
 
-            let danielCarta2 = comprarCarta()
-            daniel = daniel + danielCarta2.valor
-            console.log(`Daniel comprou a carta ${danielCarta2.texto} e está com ${daniel} pontos`)
-         } 
+         // JOGADOR 1
 
-         if (confirm("Pilar quer comprar a segunda carta?")) {
+         let compraJogador1 = true
+         let y = 2
 
-            let pilarCarta2 = comprarCarta()
-            pilar = pilar + pilarCarta2.valor
-            console.log(`Pilar comprou a carta ${pilarCarta2.texto} e está com ${pilar} pontos`)
-         } 
+         while (compraJogador1 == true) {
 
-         // comprar terceira carta
+            if (confirm("Jogador 1 / Comprar outra carta?")) {
 
-         if (confirm("Daniel quer comprar a terceira carta?")) {
+               jogador1.push(comprarCarta())
 
-            let danielCarta2 = comprarCarta()
-            daniel = daniel + danielCarta2.valor
-            console.log(`Daniel comprou a carta ${danielCarta2.texto} e está com ${daniel} pontos`)
-         } 
+               console.log(`Jogador 1 comprou a carta ${jogador1[y].texto}`)
+               pontosJogador1 += jogador1[y].valor
+               console.log(`O jogador 1 está com ${pontosJogador1}`)
+               y++
 
-         if (confirm("Pilar quer comprar a terceira carta?")) {
+               if (pontosJogador1 == 21) {
+                  console.log("Jogador 1 fez Blackjack")
+                  compraJogador1 = false
 
-            let pilarCarta2 = comprarCarta()
-            pilar = pilar + pilarCarta2.valor
-            console.log(`Pilar comprou a carta ${pilarCarta2.texto} e está com ${pilar} pontos`)
+               } else if (pontosJogador1 > 21) {
+                  console.log("Jogador 1 estourou e perdeu")
+                  compraJogador1 = false
+               }
+
+            } else {
+               compraJogador1 = false
+            }
          }
 
-         // Condições de vitória
+         // JOGADOR 2
 
-         if (daniel > 21) {
-            console.log("Daniel estourou e perdeu")
-            console.log("Pilar ganhou")
-         } else if (pilar > 21) {
-            console.log("Pilar estourou e perdeu")
-            console.log("Daniel ganhou")
-         } else if (daniel > pilar && daniel == 21) {
-            console.log("Blackjack! Daniel ganhou")
-         } else if (daniel > pilar) {
-            console.log("Daniel fez mais pontos e ganhou")
-         } else if (pilar > daniel && pilar == 21) {
-            console.log("Blackjack! Pilar ganhou")
-         } else if (pilar > daniel) {
-            console.log("Pilar fez mais pontos e ganhou")
-         } else 
-         console.log("Empate")
+         if (pontosJogador1 < 21) {
 
+            let compraJogador2 = true
+            let z = 2
+
+            while (compraJogador2 == true) {
+
+               if (confirm("Jogador 2 / Comprar outra carta?")) {
+                  jogador2.push(comprarCarta())
+
+                  console.log(`Jogador2 comprou a carta ${jogador2[z].texto}`)
+                  pontosJogador2 += jogador2[z].valor
+                  console.log(`O jogador 2 está com ${pontosJogador2}`)
+                  z++
+
+                  if (pontosJogador2 == 21) {
+                     console.log("Jogador 2 fez Blackjack")
+                     compraJogador2 = false
+
+                  } else if (pontosJogador2 > 21) {
+                     console.log("Jogador 2 estourou e perdeu")
+                     compraJogador2 = false
+                  }
+
+               } else {
+                  compraJogador2 = false
+               }
+            }
+
+            if ((pontosJogador1 < pontosJogador2) && (pontosJogador1 < 21 && pontosJogador2 < 21)) {
+               console.log("Jogador 2 fez mais pontos e ganhou")
+            } else if ((pontosJogador2 < pontosJogador1) && (pontosJogador1 < 21 && pontosJogador2 < 21)) {
+               console.log("Jogador 1 fez mais pontos e ganhou")
+            } else if ((pontosJogador1 == pontosJogador2) && (pontosJogador1 < 21 && pontosJogador2 < 21)) {
+               console.log("Terminou empatado")
+            }
+
+         }
       }
-         console.log("Até a próxima!")
+   }
+
+   console.log("Até a próxima!")
+
 }
 
 Blackjack()
