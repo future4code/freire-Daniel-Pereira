@@ -123,7 +123,7 @@ return `Venha assistir ao filme ${obra.nome}, de ${obra.ano}, dirigido por ${obr
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
-   
+  return {...pessoa, nome: "ANÔNIMO"}
 }
 
 // EXERCÍCIO 13A
