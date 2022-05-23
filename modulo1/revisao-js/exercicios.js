@@ -51,13 +51,11 @@ function retornaMaiorNumero(array) {
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
 
-
-
     function maiorNumero() {
         if(num1 > num2){
             return num1
         } else return num2;
-}
+    }
     function maiorDivisivelPorMenor() {
         if(num1 > num2 && num1 % num2 == 0) {
             return true 
@@ -86,7 +84,11 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    let pares = [];
+    for(let i = 0; i < n; i++) {
+       pares.push(i*2)
+   }
+   return pares
 }
 
 // EXERCÍCIO 09
