@@ -45,13 +45,14 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-
+ 
+    return Math.max.apply(Math, array)
   
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-    maiorNumero = Math.max()
+    
 
 }
 
