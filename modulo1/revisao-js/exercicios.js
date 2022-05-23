@@ -25,7 +25,11 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+    let pares = array.filter((callback) => {
+        if(callback % 2 == 0)
+        return true
+    })
+    return pares
 }
 
 // EXERCÍCIO 05
