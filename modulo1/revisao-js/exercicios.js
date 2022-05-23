@@ -34,18 +34,24 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-   
+    let pares = array.filter((callback) => {
+        if(callback % 2 == 0)
+        return true
+    }).map((callback) => {
+        return callback ** 2
+    })
+    return pares
 }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
- 
-    return Math.max.apply(Math, array)
+
   
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+    maiorNumero = Math.max()
 
 }
 
