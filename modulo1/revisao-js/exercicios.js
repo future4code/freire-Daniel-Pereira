@@ -45,15 +45,43 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
- 
     return Math.max.apply(Math, array)
-  
 }
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-    
 
+
+
+    function maiorNumero() {
+        if(num1 > num2){
+            return num1
+        } else return num2;
+}
+    function maiorDivisivelPorMenor() {
+        if(num1 > num2 && num1 % num2 == 0) {
+            return true 
+        } else if (num2 > num1 && num2 % num1 == 0) {
+            return true
+        } else if (num1 == num2 && num1 % num2 == 0) {
+            return true        
+        } else if (num2 == num1 && num2 % num1 == 0) {
+            return true
+        } else return false
+    }
+
+    function diferenca() {
+        if(num1 - num2 > 0) {
+            return num1 - num2
+        } else return num2 - num1
+    }
+
+    const objeto = {
+        maiorNumero: maiorNumero(),
+        maiorDivisivelPorMenor: maiorDivisivelPorMenor(),
+        diferenca: diferenca()
+    }
+    return objeto
 }
 
 // EXERCÍCIO 08
