@@ -138,7 +138,12 @@ function retornaPessoasAutorizadas(pessoas) {
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+    const naoAutorizadas = pessoas.filter((callback) => {
+        if(callback.altura < 1.5 || (callback.idade <= 14 || callback.idade > 60)) {
+            return callback
+        }
+    })
+    return naoAutorizadas
 }
 
 // EXERCÍCIO 14
