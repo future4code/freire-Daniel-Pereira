@@ -110,7 +110,15 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+   let obra =
+{
+    nome: 'O Diabo Veste Prada',
+    ano: 2006,
+    diretor: 'David Frankel',
+    atores: ['Meryl Streep', ' Anne Hathaway', ' Emily Blunt', ' Stanley Tucci']
+ }
+ 
+return `Venha assistir ao filme ${obra.nome}, de ${obra.ano}, dirigido por ${obra.diretor} e estrelado por ${obra.atores}.`
 }
 
 // EXERCÍCIO 12
