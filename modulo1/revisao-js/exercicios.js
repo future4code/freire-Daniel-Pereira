@@ -151,7 +151,10 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-    
+    const saldoAtualizado = contas.map((callback) => {
+        callback.saldoTotal = cliente.saldoTotal - compra
+    })
+    return saldoAtualizado
 }
 
 // EXERCÍCIO 15A
